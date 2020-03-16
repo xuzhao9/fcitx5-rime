@@ -9,11 +9,18 @@ include(GNUInstallDirs)
 include(ECMSetupVersion)
 include(ECMUninstallTarget)
 
+option(ENABLE_QT "Enable Qt for GUI configuration" On)
+
 find_package(Gettext REQUIRED)
 find_package(Fcitx5Core REQUIRED)
 find_package(Fcitx5Module REQUIRED COMPONENTS Notifications)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(Rime REQUIRED IMPORTED_TARGET "rime>=1.0.0")
+
+if (ENABLE_QT)
+  find_package(Qt5 5.7 REQUIRED COMPONENTS Core Widgets Concurrent)
+  find_package(Fcitx5Qt5WidgetsAddons REQUIRED)
+endif ()
 
 if(NOT DEFINED RIME_DATA_DIR)
   find_package(RimeData REQUIRED)
@@ -27,6 +34,7 @@ include("${FCITX_INSTALL_CMAKECONFIG_DIR}/Fcitx5Utils/Fcitx5CompilerSettings.cma
 
 add_subdirectory(po)
 add_subdirectory(src)
+add_subdirectory(gui)
 add_subdirectory(data)
 
 fcitx5_translate_desktop_file(org.fcitx.fcitx5-rime.metainfo.xml.in

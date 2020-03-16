@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+  <class>MainUI</class>
+  <widget class="QWidget" name="MainUI">
+    <property name="geometry">
+      <rect>
+	<x>0</x>
+	<y>0</y>
+	<width>500</width>
+	<height>500</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string>MainWindow</string>
+    </property>
+    <property name="windowIcon">
+      <iconset theme="fcitx-rime">
+	<normaloff/>
+      </iconset>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_overview">
+      <item>
+	<widget class="QTabWidget" name="frcuTabs">
+	  <widget class="QWidget" name="shortcutTab">
+	    <attribute name="title">
+	      <string>Shortcut</string>
+	    </attribute>
+	    <layout class="QHBoxLayout" name="shortcutTabLayout">
+	      <item>
+		<widget class="QTableView" name="shortcutView">
+		  <property name="selectionMode">
+		    <enum>QAbstractItemView::SingleSelection</enum>
+		  </property>
+		  <property name="selectionBehavior">
+		    <enum>QAbstractItemView::SelectRows</enum>
+		  </property>
+		  <attribute name="horizontalHeaderStretchLastSection">
+		    <bool>true</bool>
+		  </attribute>
+		  <attribute name="verticalHeaderVisible">
+		    <bool>false</bool>
+		  </attribute>
+		</widget>
+	      </item>
+	      <item>
+		<layout class="QVBoxLayout" name="shorcutSidebar">
+		     <item>
+		       <spacer name="shortcutVerticalSpacer1">
+			 <property name="orientation">
+			   <enum>Qt::Vertical</enum>
+			 </property>
+			 <property name="sizeHint" stdset="0">
+			   <size>
+			     <width>20</width>
+			     <height>40</height>
+			   </size>
+			 </property>
+		       </spacer>
+		     </item>
+
+		  <item>
+		    <widget class="QPushButton" name="addShortcutButton">
+		      <property name="text"> <string/> </property>
+		      <property name="icon">
+			<iconset theme="list-add"> <normaloff/> </iconset>
+		      </property>
+		    </widget>
+		  </item>
+		  <item>
+		    <widget class="QPushButton" name="removeShortcutButton">
+		      <property name="text"> <string/> </property>
+		      <property name="icon">
+			<iconset theme="list-remove"> <normaloff/> </iconset>
+		      </property>
+		    </widget>
+		  </item>
+		  <item>
+		    <widget class="QPushButton" name="editShortcutButton">
+		      <property name="text"> <string/> </property>
+		      <property name="icon">
+			<iconset theme="configure"> <normaloff/> </iconset>
+		      </property>
+		    </widget>
+		  </item>
+		  <item>
+		    <spacer name="shortcutVerticalSpacer2">
+		      <property name="orientation">
+			<enum>Qt::Vertical</enum>
+		      </property>
+		      <property name="sizeHint" stdset="0">
+			<size>
+			  <width>20</width>
+			  <height>40</height>
+			</size>
+		      </property>
+		    </spacer>
+		  </item>
+
+		</layout> <!-- shortcutTab sidebar vbox layout -->
+	      </item>
+	    </layout> <!-- shortcutTab hbox layout-->
+	  </widget> <!-- shortcutTab -->
+	  
+	  <widget class="QWidget" name="schemas_tab">
+	    <attribute name="title">
+	      <string>Schema</string>
+	    </attribute>
+	   <layout class="QGridLayout" name="gridLayout">
+	     <item row="3" column="0">
+	       <spacer name="horizontalSpacer_2">
+		 <property name="orientation">
+		   <enum>Qt::Horizontal</enum>
+		 </property>
+		 <property name="sizeType">
+		   <enum>QSizePolicy::Fixed</enum>
+		 </property>
+		 <property name="sizeHint" stdset="0">
+		   <size>
+		     <width>20</width>
+		     <height>20</height>
+		   </size>
+		 </property>
+	       </spacer>
+	     </item>
+	     <item row="3" column="1" colspan="2">
+	       <layout class="QHBoxLayout" name="horizontalLayout">
+		 <item>
+		   <layout class="QVBoxLayout" name="verticalLayout">
+		     <item>
+		       <widget class="QLabel" name="label">
+			 <property name="text">
+			   <string>Available Input Schemas:</string>
+			 </property>
+		       </widget>
+		     </item>
+		     <!-- <item> -->
+		     <!--   <widget class="QLineEdit" name="filterTextEdit"/> -->
+		     <!-- </item> -->
+		     <item>
+		       <widget class="QListView" name="availIMView">
+		       </widget>
+		     </item>
+		   </layout>
+		 </item>
+		 <item>
+		   <layout class="QVBoxLayout" name="verticalLayout_3">
+		     <item>
+		       <spacer name="verticalSpacer">
+			 <property name="orientation">
+			   <enum>Qt::Vertical</enum>
+			 </property>
+			 <property name="sizeHint" stdset="0">
+			   <size>
+			     <width>20</width>
+			     <height>40</height>
+			   </size>
+			 </property>
+		       </spacer>
+		     </item>
+		     <item>
+		       <widget class="QPushButton" name="addIMButton">
+			 <property name="enabled">
+			   <bool>false</bool>
+			 </property>
+		       </widget>
+		     </item>
+		     <item>
+		       <widget class="QPushButton" name="removeIMButton">
+			 <property name="enabled">
+			   <bool>false</bool>
+			 </property>
+		       </widget>
+		     </item>
+		     <item>
+		       <spacer name="verticalSpacer_2">
+			 <property name="orientation">
+			   <enum>Qt::Vertical</enum>
+			 </property>
+			 <property name="sizeHint" stdset="0">
+			   <size>
+			     <width>20</width>
+			     <height>40</height>
+			   </size>
+			 </property>
+		       </spacer>
+		     </item>
+		   </layout>
+		 </item>
+		 <item>
+		   <layout class="QVBoxLayout" name="verticalLayout_2">
+		     <item>
+		       <widget class="QLabel" name="label_2">
+			 <property name="text">
+			   <string>Active Input Schemas:</string>
+			 </property>
+		       </widget>
+		     </item>
+		     <item>
+		       <widget class="QListView" name="currentIMView"/>
+		     </item>
+		   </layout>
+		 </item>
+		 <item>
+		   <layout class="QVBoxLayout" name="verticalLayout_4">
+		     <item>
+		       <spacer name="verticalSpacer_3">
+			 <property name="orientation">
+			   <enum>Qt::Vertical</enum>
+			 </property>
+			 <property name="sizeHint" stdset="0">
+			   <size>
+			     <width>20</width>
+			     <height>40</height>
+			   </size>
+			 </property>
+		       </spacer>
+		     </item>
+		     <item>
+		       <widget class="QPushButton" name="moveUpButton">
+			 <property name="enabled">
+			   <bool>false</bool>
+			 </property>
+		       </widget>
+		     </item>
+		     <item>
+		       <widget class="QPushButton" name="moveDownButton">
+			 <property name="enabled">
+			   <bool>false</bool>
+			 </property>
+		       </widget>
+		     </item>
+		     <!-- <item> -->
+		     <!--   <widget class="QPushButton" name="configureButton"/> -->
+		     <!-- </item> -->
+		     <item>
+		       <spacer name="verticalSpacer_4">
+			 <property name="orientation">
+			   <enum>Qt::Vertical</enum>
+			 </property>
+			 <property name="sizeHint" stdset="0">
+			   <size>
+			     <width>20</width>
+			     <height>40</height>
+			   </size>
+			 </property>
+		       </spacer>
+		     </item>
+		   </layout>
+		 </item>
+	       </layout>
+	     </item>
+
+	     <item row="2" column="0" colspan="3">
+	       <widget class="QLabel" name="label_4">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="text">
+            <string>&lt;b&gt;Select Input Schema:&lt;/b&gt;</string>
+           </property>
+	       </widget>
+	     </item>
+	   </layout> 
+	  </widget><!-- schemas -->
+	</widget> <!-- QTabwidget -->
+  </item>
+  </layout>
+  </widget>
+  <customwidgets>
+    <customwidget>
+      <class>FcitxQtKeySequenceWidget</class>
+      <extends>QWidget</extends>
+      <header>fcitxqtkeysequencewidget.h</header>
+    </customwidget>
+  </customwidgets>
+  <resources/>
+  <connections/>
+</ui>

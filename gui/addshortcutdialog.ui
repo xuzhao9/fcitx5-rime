@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddShortcutDialog</class>
+ <widget class="QDialog" name="AddShortcutDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>356</width>
+    <height>126</height>
+   </rect>
+</property>
+<property name="windowTitle"> <string>Fcitx Rime Shortcut Config</string> </property>
+<layout class="QVBoxLayout" name="vLayout">
+  <item><layout class="QFormLayout" name="formLayout" >
+    <item row="0" column="0"><widget class="QLabel" name="commandLabel">
+      <property name="text"><string>Command: </string></property>
+      <property name="buddy"><cstring>commandBox</cstring></property>
+    </widget></item> <!-- commandLabel -->
+    <item row="0" column="1"><widget class="QComboBox" name="commandBox">
+      <property name="sizePolicy">
+	<sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+	</sizepolicy>
+      </property>
+    </widget></item> <!-- commandBox -->
+    <item row="1" column="0"><widget class="QLabel" name="inputModeLabel">
+      <property name="text"><string>Input Mode: </string></property>
+      <property name="buddy"><cstring>inputModeBox</cstring></property>
+    </widget></item> <!-- inputModeLabel -->
+    <item row="1" column="1"><widget class="QComboBox" name="inputModeBox">
+      <property name="sizePolicy">
+	<sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+	</sizepolicy>
+      </property>
+    </widget></item> <!-- inputModeBox -->
+    <item row="2" column="0"> <widget class="QLabel" name="keyLabel">
+      <property name="text"><string>Key Shortcut: </string></property>
+      <property name="buddy"><cstring>keyButton</cstring></property>
+    </widget></item> <!-- keyLabel -->
+    <item row="2" column="1">
+      <widget class="FcitxQtKeySequenceWidget" name="keyButton" native="true">
+	<property name="minimumSize">
+          <size>
+            <width>0</width>
+            <height>0</height>
+          </size>
+	</property>
+      </widget> </item> <!-- keyButton -->
+    <item row="3" column="0"> <widget class="QLabel" name="candidLabel">
+      <property name="text"><string>Number of candidates: </string></property>
+      <property name="buddy"><cstring>candidVal</cstring></property>
+      <property name="visible"><bool>false</bool></property>
+    </widget></item> <!-- candidLabel -->
+    <item row="3" column="1">
+      <widget class="QSpinBox" name="candidVal" native="true">
+	<property name="visible"><bool>false</bool></property>
+      </widget> </item> <!-- candidVal -->
+  </layout></item>  
+  <item> <widget class="QDialogButtonBox" name="buttonBox">
+    <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+    </property>  
+  </widget></item>
+</layout>
+</widget>
+<customwidgets>
+  <customwidget>
+   <class>FcitxQtKeySequenceWidget</class>
+   <extends>QWidget</extends>
+   <header>fcitxqtkeysequencewidget.h</header>
+  </customwidget>
+</customwidgets>
+<resources/>
+<connections>
+  <connection>
+    <sender>buttonBox</sender>
+    <signal>accepted()</signal>
+    <receiver>AddShortcutDialog</receiver>
+    <slot>accept()</slot>
+  </connection>
+  <connection>
+    <sender>buttonBox</sender>
+    <signal>rejected()</signal>
+    <receiver>AddShortcutDialog</receiver>
+    <slot>reject()</slot>
+  </connection>
+</connections>
+</ui>
