@@ -21,10 +21,10 @@
 #include <fcitxqtconfiguiwidget.h>
 #include <fcitxqtkeysequencewidget.h>
 
-#include "RimeConfigParser.h"
-#include "SchemaModel.h"
-#include "ShortcutModel.h"
-#include "ui_ConfigMain.h"
+#include "configparser.h"
+#include "schemamodel.h"
+#include "shortcutmodel.h"
+#include "ui_configmain.h"
 
 namespace fcitx_rime {
 

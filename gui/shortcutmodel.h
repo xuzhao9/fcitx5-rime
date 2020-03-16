@@ -18,7 +18,7 @@
 #ifndef FCITX_RIME_SHORTCUT_MODEL_H
 #define FCITX_RIME_SHORTCUT_MODEL_H
 
-#include "RimeConfigParser.h"
+#include "configparser.h"
 #include <QAbstractTableModel>
 #include <QVector>
 

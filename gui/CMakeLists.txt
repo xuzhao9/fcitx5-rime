@@ -12,7 +12,7 @@ if(NOT ENABLE_QT)
 endif()
 
 qt5_wrap_ui(RIME_CONFIG_SRCS addshortcutdialog.ui configmain.ui)
-add_libraty(fcitx5-rime-config
+add_library(fcitx5-rime-config
   MODULE ${RIME_CONFIG_SRCS})
 
 add_definitions(-DQT_NO_KEYWORDS -std=c++11)

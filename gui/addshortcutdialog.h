@@ -19,8 +19,9 @@
 #ifndef FCITX_RIME_ADD_SHORTCUT_DIALOG_H
 #define FCITX_RIME_ADD_SHORTCUT_DIALOG_H_
 
-#include "RimeConfigParser.h"
-#include "ui_AddShortcutDialog.h"
+#include "configparser.h"
+#include "ui_addshortcutdialog.h"
+
 #include <QDialog>
 
 namespace fcitx_rime {
