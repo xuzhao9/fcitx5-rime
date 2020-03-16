@@ -11,9 +11,19 @@ if(NOT ENABLE_QT)
   return()
 endif()
 
+qt5_wrap_ui(RIME_CONFIG_SRCS addshortcutdialog.ui configmain.ui)
+add_libraty(fcitx5-rime-config
+  MODULE ${RIME_CONFIG_SRCS})
+
 add_definitions(-DQT_NO_KEYWORDS -std=c++11)
 
-qt5_wrap_ui(RIME_CONFIG_SRCS addshortcutdialog.ui configmain.ui)
+target_include_directories(fcitx5-rime-config PRIVATE ${PROJECT_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR})
+
+set_target_properties(fcitx5-rime-config PROPERTIES
+  LINK_FLAGS "-Wl,--no-undefined"
+  AUTOMOC TRUE
+  AUTOUIC TRUE
+  AUTOUIC_OPTIONS "-tr=fcitx::tr2fcitx;--include=fcitxqti18nhelper.h")
 
 target_link_libraries(fcitx5-rime-config
   Qt5::Concurrent
